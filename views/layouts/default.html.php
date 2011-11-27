@@ -27,8 +27,6 @@
   <h1>SmartSuper</h1>
 </div>
 
-  <?php echo $body; ?>
-
     <div data-role="navbar">
       <ul>
 
@@ -49,6 +47,8 @@
 
       </ul>
     </div>
+
+    <?php echo $body; ?>
 
   </div>
 
