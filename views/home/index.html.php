@@ -27,8 +27,17 @@ $result = db::query($sql);
       <h2><?php echo $row->title; ?></h2>
       <span class="ui-li-aside">$<?php echo $row->price; ?></span>
     </a>
-    <a href="<?php echo url_for("add/$row->id"); ?>" data-rel="dialog" data-icon="plus" data-iconpos="notext" title="Agregar">Agregar</a>
+    <a href="#" class="add_offer" data-id="<?php echo $row->id; ?>" data-icon="plus" data-iconpos="notext" title="Agregar">Agregar</a>
   </li>
 
 <?php } ?>
 </ul>
+
+<script>
+$('.add_offer').click(function () {
+  $.post('<?php echo url_for('async'); ?>?oid=' + $(this).data('id'), function () {
+    document.location.href = '<?php echo url_for(ROOT); ?>';
+  });
+  return false;
+});
+</script>

@@ -10,8 +10,17 @@
       <h2><?php echo $row->title; ?></h2>
       <span class="ui-li-aside">$<?php echo $row->price; ?></span>
     </a>
-    <a href="<?php echo url_for("rm/$row->id"); ?>" data-rel="dialog" data-icon="minus" data-iconpos="notext" title="Quitar">Quitar</a>
+    <a href="#" class="rm_offer" data-id="<?php echo $row->id; ?>" data-icon="minus" data-iconpos="notext" title="Quitar">Quitar</a>
   </li>
 
 <?php } ?>
 </ul>
+
+
+<script>
+$('.rm_offer').click(function () {
+  $.post('<?php echo url_for('async'); ?>?rm=1&oid=' + $(this).data('id'), function () {
+    document.location.href = '<?php echo url_for('list'); ?>';
+  });
+});
+</script>
