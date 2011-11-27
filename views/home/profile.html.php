@@ -8,31 +8,9 @@
       <label for="radio-choice-2">Mujer</label>
     </fieldset>
 
-    <fieldset data-role="controlgroup" data-type="horizontal" class="birthday">
-      <legend>Cumpleaños:</legend>
-      <select>
-<?php for ($d = 1; $d < 31; $d += 1) { ?>
-        <option value="<?php echo $d; ?>"><?php echo $d; ?></option>
-<?php } ?>
-      </select>
-      <select>
-<?php foreach (array(
-  'Enero',
-  'Febrero',
-  'Marzo',
-  'Abril',
-  'Mayo',
-  'Junio',
-  'Julio',
-  'Agosto',
-  'Septiembre',
-  'Octubre',
-  'Noviembre',
-  'Diciembre',
-) as $m => $one) { ?>
-      <option value="<?php echo $m + 1; ?>"><?php echo $one; ?></option>
-<?php } ?>
-    </select>
+    <fieldset data-role="controlgroup" data-type="horizontal">
+      <legend>Año de nacimiento</legend>
+
       <select>
 <?php for ($y = 2011; $y > 1970; $y -= 1) { ?>
         <option value="<?php echo $y; ?>"><?php echo $y; ?></option>
@@ -45,15 +23,20 @@
 <div class="categories">
 
   <p>Selecciona el tipo de ofertas que te interesan:</p>
+  <?php $categories = categories::all(); ?>
 
 <?php for ($x = 0; $x < 4; $x += 1) { ?>
 
 <fieldset data-role="controlgroup" data-type="horizontal">
 <?php for ($y = 0; $y < 3; $y += 1) { ?>
 
-<input type="checkbox" name="checkbox-<?php echo "$x-$y"; ?>" id="checkbox-<?php echo "$x-$y"; ?>" class="custom" />
+<?php $one = array_shift($categories); ?>
+
+<input <?php
+echo my_cats::count_by_cat_id($one->id) ? ' checked="checked" ' : '';
+?> type="checkbox" name="checkbox-<?php echo "$x-$y"; ?>" id="checkbox-<?php echo "$x-$y"; ?>" class="category" data-id="<?php echo $one->id; ?>">
 <label for="checkbox-<?php echo "$x-$y"; ?>">
-  <img src="http://www.adverpro.co.uk/offer-products/images/iconOffer.gif">
+  <img src="http://www.adverpro.co.uk/offer-products/images/iconOffer.gif" title="<?php echo $one->title; ?>">
 </label>
 
 <?php } ?>
@@ -67,3 +50,8 @@
   'data' => array('role' => 'button', 'icon' => 'arrow-r', 'iconpos' => 'right'),
 )); ?>
 
+<script>
+$('input.category').click(function () {
+  $.post('<?php echo url_for('async'); ?>?cid=' + $(this).data('id') + '&st=' + (this.checked ? 1 : 0));
+});
+</script>

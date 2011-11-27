@@ -1,8 +1,10 @@
+<?php $offer = offers::find(params('id')); ?>
+
 <ul data-role="listview">
   <li>
-    <img class="offer-logo" src="http://jquerymobile.com/demos/1.0/docs/lists/images/album-hc.jpg">
-    <h2>Titulo de la oferta</h2>
-    <p>Esta es la descripción de la oferta, entre otras cosas...</p>
+    <img src="http://www.superama.com.mx/images/products/img_small/<?php echo $offer->image; ?>s.jpg">
+    <h2><?php echo $offer->title; ?></h2>
+    <p>Esta oferta la puedes encontrar en Superama, etc, etc...</p>
   </li>
 </ul>
 <div style="background:url(http://www.librosweb.es/img/ajax/f0907.gif);height:260px"></div>
