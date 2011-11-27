@@ -11,6 +11,7 @@ call_user_func(function () {
   run(function () {
 
     import('partial');
+    import('a_record');
 
     root(function () {
       view('home/index.html');

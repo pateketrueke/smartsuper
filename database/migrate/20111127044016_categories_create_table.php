@@ -4,9 +4,6 @@ create_table('categories', array(
   'title' => array(
     'string',
   ),
-  'desc' => array(
-    'text',
-  ),
   'image' => array(
     'string',
   ),

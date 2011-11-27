@@ -4,8 +4,8 @@ create_table('offers', array(
   'title' => array(
     'string',
   ),
-  'desc' => array(
-    'text',
+  'parent' => array(
+    'integer',
   ),
   'image' => array(
     'string',
