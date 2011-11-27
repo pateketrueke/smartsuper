@@ -32,7 +32,7 @@ call_user_func(function () {
             'cat_id' => request::get('cid'),
           ));
         } else {
-          my_cats::find(request::get('cid'))->delete();
+          ($old = my_cats::find_by_cat_id(request::get('cid'))) ? $old->delete() : NULL;
         }
       }
       exit;
