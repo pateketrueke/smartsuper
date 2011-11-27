@@ -25,7 +25,7 @@
 <style>
 .ui-listview-filter { padding: 0 20px; padding-bottom: 0; }
 .my-prefs fieldset, .categories p { padding: 0 20px; }
-.categories { margin: 0 auto; width: 270px; }
+.categories { margin: 0 auto; width: 310px; }
 .categories fieldset { margin: 0; }
 </style>
 
