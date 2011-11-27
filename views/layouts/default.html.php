@@ -27,6 +27,7 @@
 .my-prefs fieldset, .categories p { padding: 0 20px; }
 .categories { margin: 0 auto; width: 310px; }
 .categories fieldset { margin: 0; }
+.ui-btn-inner { padding: 13px; }
 </style>
 
   </head>
