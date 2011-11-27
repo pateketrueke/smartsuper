@@ -23,6 +23,9 @@ call_user_func(function () {
     }
 
     root(function () {
+      if ( ! my_cats::count()) {
+        redirect(url_for('profile'));
+      }
       view('home/index.html');
     }, array('path' => 'home'));
 
