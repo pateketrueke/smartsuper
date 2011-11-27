@@ -33,10 +33,10 @@
 <?php $one = array_shift($categories); ?>
 
 <input <?php
-echo my_cats::count_by_cat_id($one->id) ? ' checked="checked" ' : '';
+echo ($st = my_cats::count_by_cat_id($one->id)) ? ' checked="checked" ' : '';
 ?> type="checkbox" name="checkbox-<?php echo "$x-$y"; ?>" id="checkbox-<?php echo "$x-$y"; ?>" class="category" data-id="<?php echo $one->id; ?>">
 <label for="checkbox-<?php echo "$x-$y"; ?>">
-  <img src="http://www.adverpro.co.uk/offer-products/images/iconOffer.gif" title="<?php echo $one->title; ?>">
+  <img src="<?php  echo path_to(sprintf('img/%s_%s.png',slug($one->title,'_',SLUG_TRIM|SLUG_STRICT|SLUG_LOWER),$st?'on':'off')); ?>" title="<?php echo $one->title; ?>">
 </label>
 
 <?php } ?>
