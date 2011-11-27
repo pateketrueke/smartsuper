@@ -28,7 +28,7 @@ if ($sql) {
     <a href="<?php echo url_for("offer/$row->id"); ?>">
       <img src="http://www.superama.com.mx/images/products/img_small/<?php echo $row->image; ?>s.jpg">
       <h2><?php echo $row->title; ?></h2>
-      <span class="ui-li-aside">$<?php echo $row->price; ?></span>
+      <span class="ui-li-count">$<?php echo $row->price; ?></span>
     </a>
     <a href="#" class="add_offer" data-id="<?php echo $row->id; ?>" data-icon="plus" data-iconpos="notext" title="Agregar">Agregar</a>
   </li>
