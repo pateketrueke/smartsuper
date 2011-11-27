@@ -3,7 +3,7 @@
 <?php
 
 $my =
-$all = array('NULL');
+$all = array();
 
 foreach (my_cats::all() as $one) {
   $all []= $one->cat_id;
@@ -13,10 +13,13 @@ foreach (my_list::all() as $one) {
   $my []= $one->offer_id;
 }
 
-$sql = sprintf('SELECT * FROM offers WHERE parent IN(%s) AND id NOT IN(%s)', join(', ', $all), join(', ', $my));
+$sql = '';
 
-$result = db::query($sql);
+$all && $sql = sprintf('SELECT * FROM offers WHERE parent IN(%s)', join(', ', $all));
+$my && $sql .= sprintf('AND id NOT IN(%s)', join(', ', $my));
 
+if ($sql) {
+  $result = db::query($sql);
 ?>
 
 <?php while ($row = db::fetch($result, AS_OBJECT)) { ?>
@@ -41,3 +44,7 @@ $('.add_offer').click(function () {
   return false;
 });
 </script>
+
+<?php } else { ?>
+No hay ofertas para ti aún, por favor configura tu perfil.
+<?php } ?>
