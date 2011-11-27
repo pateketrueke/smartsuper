@@ -17,6 +17,7 @@
 .my-prefs fieldset, .categories p { padding: 0 20px; }
 .categories { margin: 0 auto; width: 270px; }
 .categories fieldset { margin: 0; }
+.birthday { font-size: 12px; }
 </style>
 
   </head>

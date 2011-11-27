@@ -8,7 +8,7 @@
       <label for="radio-choice-2">Mujer</label>
     </fieldset>
 
-    <fieldset data-role="controlgroup" data-type="horizontal">
+    <fieldset data-role="controlgroup" data-type="horizontal" class="birthday">
       <legend>Cumpleaños:</legend>
       <select>
 <?php for ($d = 1; $d < 31; $d += 1) { ?>
