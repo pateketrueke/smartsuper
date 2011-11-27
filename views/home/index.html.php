@@ -16,7 +16,7 @@ foreach (my_list::all() as $one) {
 $sql = '';
 
 $all && $sql = sprintf('SELECT * FROM offers WHERE parent IN(%s)', join(', ', $all));
-$my && $sql .= sprintf('AND id NOT IN(%s)', join(', ', $my));
+$all && $my && $sql .= sprintf('AND id NOT IN(%s)', join(', ', $my));
 
 if ($sql) {
   $result = db::query($sql);
