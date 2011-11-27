@@ -52,6 +52,16 @@ echo ($st = my_cats::count_by_cat_id($one->id)) ? ' checked="checked" ' : '';
 
 <script>
 $('input.category').click(function () {
-  $.post('<?php echo url_for('async'); ?>?cid=' + $(this).data('id') + '&st=' + (this.checked ? 1 : 0));
+  var st = this.checked,
+      el = $(this);
+
+  $.post('<?php echo url_for('async'); ?>?cid=' + el.data('id') + '&st=' + (st ? 1 : 0), function () {
+    var img = el.parent().find('img'),
+        url = img.prop('src');
+
+    url = ! st ? url.replace('_on', '_off') : url.replace('_off', '_on');
+
+    img.attr('src', url);
+  });
 });
 </script>
