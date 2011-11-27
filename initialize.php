@@ -14,6 +14,8 @@ call_user_func(function () {
     import('a_record');
 
     if (request::get('migrate')) {
+      import('db');
+
       require __DIR__.DS.'database'.DS.'schema'.EXT;
       require __DIR__.DS.'database'.DS.'seeds'.EXT;
 
