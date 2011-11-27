@@ -12,13 +12,49 @@
 <script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
 <script src="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js"></script>
 
+<style>
+.ui-listview-filter { padding: 20px; padding-bottom: 0; }
+</style>
+
   </head>
 
 <body>
 
-<div id="main-body" data-role="page">
-  <?php echo $body; ?>
+<div data-role="page">
+
+<div data-role="header" data-position="inline">
+  <a href="<?php echo url_for('profile'); ?>" data-icon="gear" class="ui-btn-right">Mi perfil</a>
+  <h1>SmartSuper</h1>
 </div>
+
+  <?php echo $body; ?>
+
+    <div data-role="navbar">
+      <ul>
+
+<?php foreach (array(
+  url_for(ROOT) => array('Inicio', 'home'),
+  url_for('show') => array('Buscar ofertas', 'search'),
+  url_for('list') => array('Mis ofertas', 'star'),
+) as $one => $text) { ?>
+
+<li>
+  <?php echo link_to($text[0], $one, array(
+    'data' => array('icon' => $text[1]),
+    'class' => url_for(URI) === $one ? 'ui-btn-active' : ''
+  )); ?>
+</li>
+
+<?php } ?>
+
+      </ul>
+    </div>
+
+  </div>
+
+</div>
+
+
 
   </body>
 </html>

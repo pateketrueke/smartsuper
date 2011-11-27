@@ -8,7 +8,7 @@
       <p>Descripcion</p>
       <span class="ui-li-aside">$000 - 1.2km</span>
     </a>
-    <a href="<?php echo url_for("add/$i"); ?>" data-rel="dialog" data-icon="plus" data-iconpos="notext" title="Agregar">Agregar</a>
+    <a href="<?php echo url_for("rm/$i"); ?>" data-rel="dialog" data-icon="minus" data-iconpos="notext" title="Quitar">Quitar</a>
   </li>
 
 <?php } ?>
