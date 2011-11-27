@@ -1,20 +1,15 @@
-<p>Selecciona el tipo de ofertas que te interesan:</p>
+<ul data-role="listview">
+<?php for ($i = 0; $i < 5; $i += 1) { ?>
 
-<?php for ($x = 0; $x < 4; $x += 1) { ?>
-
-<fieldset data-role="controlgroup" data-type="horizontal">
-<?php for ($y = 0; $y < 3; $y += 1) { ?>
-
-<input type="checkbox" name="checkbox-<?php echo "$x-$y"; ?>" id="checkbox-<?php echo "$x-$y"; ?>" class="custom" />
-<label for="checkbox-<?php echo "$x-$y"; ?>">
-  <img src="http://www.adverpro.co.uk/offer-products/images/iconOffer.gif">
-</label>
-
-<?php } ?>
-</fieldset>
+  <li>
+    <a href="<?php echo url_for("offer/$i"); ?>">
+      <img src="http://jquerymobile.com/demos/1.0/docs/lists/images/album-hc.jpg">
+      <h2>Titulo</h2>
+      <p>Descripcion</p>
+      <span class="ui-li-aside">$000 - 1.2km</span>
+    </a>
+    <a href="<?php echo url_for("add/$i"); ?>" data-rel="dialog" data-icon="plus" data-iconpos="notext" title="Agregar">Agregar</a>
+  </li>
 
 <?php } ?>
-
-<?php echo link_to('Buscar ofertas ya!', 'show', array(
-  'data' => array('role' => 'button', 'icon' => 'arrow-r', 'iconpos' => 'right'),
-)); ?>
+</ul>

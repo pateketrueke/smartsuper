@@ -13,7 +13,10 @@
 <script src="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js"></script>
 
 <style>
-.ui-listview-filter { padding: 20px; padding-bottom: 0; }
+.ui-listview-filter { padding: 0 20px; padding-bottom: 0; }
+.my-prefs fieldset, .categories p { padding: 0 20px; }
+.categories { margin: 0 auto; width: 270px; }
+.categories fieldset { margin: 0; }
 </style>
 
   </head>
@@ -31,8 +34,7 @@
       <ul>
 
 <?php foreach (array(
-  url_for(ROOT) => array('Inicio', 'home'),
-  url_for('show') => array('Buscar ofertas', 'search'),
+  url_for(ROOT) => array('Buscar ofertas', 'search'),
   url_for('list') => array('Mis ofertas', 'star'),
 ) as $one => $text) { ?>
 
@@ -53,8 +55,6 @@
   </div>
 
 </div>
-
-
 
   </body>
 </html>

@@ -1,4 +1,4 @@
-<ul data-role="listview" data-filter="true">
+<ul data-role="listview">
 <?php for ($i = 0; $i < 5; $i += 1) { ?>
 
   <li>
