@@ -13,6 +13,13 @@ call_user_func(function () {
     import('partial');
     import('a_record');
 
+    if (request::get('migrate')) {
+      require __DIR__.DS.'database'.DS.'schema'.EXT;
+      require __DIR__.DS.'database'.DS.'seeds'.EXT;
+
+      redirect();
+    }
+
     root(function () {
       view('home/index.html');
     }, array('path' => 'home'));
