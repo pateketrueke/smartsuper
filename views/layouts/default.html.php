@@ -37,6 +37,8 @@
 <div data-role="header" data-position="inline">
   <?php if (URI === '/profile') { ?>
   <a href="<?php echo ROOT; ?>" data-icon="back">Regresar</a>
+  <?php } elseif (substr(URI, 0, 6) === '/offer') { ?>
+  <a href="<?php echo ROOT; ?>" data-icon="back" data-rel="back">Regresar</a>
   <?php } ?>
   <h1>SmartSuper</h1>
   <a href="<?php echo url_for('profile'); ?>" data-icon="gear" class="ui-btn-right">Mi perfil</a>
