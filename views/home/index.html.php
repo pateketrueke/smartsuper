@@ -3,7 +3,7 @@
 <?php
 
 $my =
-$all = array();
+$all = array('NULL');
 
 foreach (my_cats::all() as $one) {
   $all []= $one->cat_id;
