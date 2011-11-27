@@ -28,7 +28,7 @@ foreach ($jsons as $json_file) {
     }
 
     $product = offers::create(array(
-      'title' => $matches[2][$one],
+      'title' => utf8_encode($matches[2][$one]),
       'image' => $matches[1][$one],
       'price' => $matches[3][$one],
       'parent' => $parent->id(),
