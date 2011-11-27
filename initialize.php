@@ -47,14 +47,6 @@ call_user_func(function () {
       exit;
     });
 
-    get('/:action/:id', function () {
-      view(sprintf('home/%s.html', params('action')), array(), 'dialog.html');
-    }, array(
-      'constraints' => array(
-        ':action' => '(add|rm)',
-      ),
-    ));
-
     get('/:part(/:id)', function () {
       view(sprintf('home/%s.html', params('part')));
     });
