@@ -28,6 +28,7 @@
 .categories { margin: 0 auto; width: 310px; }
 .categories fieldset { margin: 0; }
 .ui-btn-inner { padding: 13px; }
+.list-title { font-size: 12px; }
 </style>
 
   </head>

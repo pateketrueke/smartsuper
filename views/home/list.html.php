@@ -7,8 +7,8 @@
   <li>
     <a href="<?php echo url_for("offer/$row->id"); ?>">
       <img src="http://www.superama.com.mx/images/products/img_small/<?php echo $row->image; ?>s.jpg">
-      <h2><?php echo $row->title; ?></h2>
-      <span class="ui-li-count">$<?php echo $row->price; ?></span>
+      <h2 class="list-title"><?php echo $row->title; ?></h2>
+      <p>$<?php echo $row->price; ?></p>
     </a>
     <a href="#" class="rm_offer" data-id="<?php echo $row->id; ?>" data-icon="minus" data-iconpos="notext" title="Quitar">Quitar</a>
   </li>
