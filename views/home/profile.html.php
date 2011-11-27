@@ -63,7 +63,7 @@
 
 </div>
 
-<?php echo link_to('Buscar ofertas ya!', 'show', array(
+<?php echo link_to('Buscar ofertas ya!', ROOT, array(
   'data' => array('role' => 'button', 'icon' => 'arrow-r', 'iconpos' => 'right'),
 )); ?>
 

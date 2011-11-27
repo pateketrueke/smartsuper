@@ -26,10 +26,14 @@
 <div data-role="page">
 
 <div data-role="header" data-position="inline">
-  <a href="<?php echo url_for('profile'); ?>" data-icon="gear" class="ui-btn-right">Mi perfil</a>
+  <?php if (URI === '/profile') { ?>
+  <a href="<?php echo ROOT; ?>" data-icon="back">Regresar</a>
+  <?php } ?>
   <h1>SmartSuper</h1>
+  <a href="<?php echo url_for('profile'); ?>" data-icon="gear" class="ui-btn-right">Mi perfil</a>
 </div>
 
+<?php if (URI <> '/profile') { ?>
     <div data-role="navbar">
       <ul>
 
@@ -49,6 +53,8 @@
 
       </ul>
     </div>
+
+<?php } ?>
 
     <?php echo $body; ?>
 
